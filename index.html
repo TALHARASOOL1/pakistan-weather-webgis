@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pakistan Live Weather Web GIS</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Pakistan Live Weather Web GIS</h1>
+  <p class="sub">
+    <b>Study area:</b> Major cities of Pakistan, from Islamabad and Rawalpindi (Potohar Plateau)
+    to Karachi (coast), Skardu and Gilgit (mountains).
+    Current weather is fetched live from the Open-Meteo API and shown on an interactive map.
+  </p>
+</header>
+
+<main>
+  <aside id="panel">
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search city (e.g. Lahore)">
+      <select id="filter">
+        <option value="all">All temperatures</option>
+        <option value="cold">Cold (below 15 °C)</option>
+        <option value="mild">Mild (15 – 28 °C)</option>
+        <option value="hot">Hot (above 28 °C)</option>
+      </select>
+      <button id="refresh">Refresh data</button>
+    </div>
+    <div id="status" class="status">Loading...</div>
+    <ul id="list"></ul>
+    <p class="hint">Tip: click anywhere on the map to get weather for that exact point.</p>
+  </aside>
+  <div id="map"></div>
+</main>
+
+<footer>
+  <b>Data source:</b>
+  <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo Weather API</a>
+  (CC BY 4.0, no API key needed) &nbsp;|&nbsp;
+  <b>Base map:</b> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors &nbsp;|&nbsp;
+  <b>Map library:</b> <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>
+  &nbsp;|&nbsp; Assignment No. 2, Dept. of Meteorology, COMSATS University Islamabad
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

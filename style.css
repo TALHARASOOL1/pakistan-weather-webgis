@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; height: 100vh; display: flex; flex-direction: column;
+  font-family: "Segoe UI", Arial, sans-serif; color: #1b2a3a; background: #f4f6f9;
+}
+header { background: #0b2a4a; color: #fff; padding: 10px 16px; }
+header h1 { margin: 0 0 4px; font-size: 1.3rem; }
+header .sub { margin: 0; font-size: 0.85rem; opacity: 0.9; line-height: 1.4; }
+
+main { flex: 1; display: flex; min-height: 0; }
+#panel { width: 320px; background: #fff; border-right: 1px solid #d5dbe3; display: flex; flex-direction: column; }
+#map { flex: 1; }
+
+.controls { padding: 10px; display: grid; gap: 8px; border-bottom: 1px solid #e3e8ee; }
+.controls input, .controls select, .controls button {
+  padding: 8px; font-size: 0.9rem; border: 1px solid #b9c3cf; border-radius: 6px;
+}
+.controls button { background: #0b2a4a; color: #fff; border: none; cursor: pointer; }
+.controls button:hover { background: #164a7c; }
+
+.status { padding: 8px 10px; font-size: 0.85rem; background: #eef3f8; }
+.status.error { background: #fde8e8; color: #9b1c1c; }
+.status.ok { background: #e6f6ec; color: #166534; }
+
+#list { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; }
+#list li {
+  display: flex; justify-content: space-between; padding: 9px 12px;
+  border-bottom: 1px solid #eef1f5; cursor: pointer; font-size: 0.92rem;
+}
+#list li:hover { background: #eaf2fb; }
+#list .t { font-weight: 600; }
+.hint { margin: 0; padding: 8px 10px; font-size: 0.78rem; color: #5b6b7c; border-top: 1px solid #e3e8ee; }
+
+footer { background: #fff; border-top: 1px solid #d5dbe3; padding: 6px 12px; font-size: 0.75rem; color: #4a5a6b; }
+
+/* temperature markers */
+.tmarker {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff; font-weight: 700;
+  font-size: 13px; display: flex; align-items: center; justify-content: center;
+  border: 2px solid #fff; box-shadow: 0 1px 5px rgba(0,0,0,.45);
+}
+.cold { background: #2b7bd6; }
+.mild { background: #2e9e5b; }
+.hot  { background: #e0612b; }
+
+.pop h3 { margin: 0 0 6px; font-size: 1rem; }
+.pop table { border-collapse: collapse; font-size: 0.85rem; }
+.pop td { padding: 2px 8px 2px 0; }
+.pop td:first-child { color: #5b6b7c; }
+
+@media (max-width: 760px) {
+  main { flex-direction: column-reverse; }
+  #panel { width: 100%; height: 38%; border-right: none; border-top: 1px solid #d5dbe3; }
+}
